@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PINTU STUDY</title>
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 15px;text-align:center;background:#111;border-bottom:2px solid #ff6a00}
+header h1{color:#ff7900;margin:0;font-size:32px;text-shadow:0 0 15px #ff5500}
+header p{color:#bbb}
+nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:15px;background:#151515;position:sticky;top:0;z-index:5}
+nav a{color:white;text-decoration:none;padding:10px 13px;border:1px solid #ff7100;border-radius:8px}
+nav a:hover{background:#ff7100;color:#000}
+.hero{text-align:center;padding:55px 15px;background:radial-gradient(ellipse at top,#42200d,#090909 70%)}
+.hero h2{font-size:30px;color:#ff7900}
+.hero p{color:#ddd;line-height:1.7}
+.btn{display:inline-block;background:#ff7100;color:#111;text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:8px;margin:8px}
+section{padding:30px 16px;max-width:1000px;margin:auto}
+h2.heading{text-align:center;color:#ff7900}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:#151515;border:1px solid #343434;border-radius:14px;padding:20px;box-shadow:0 0 12px #ff710015}
+.card h3{color:#ff8a25}
+.card p{color:#ccc;line-height:1.6}
+button{background:#ff7100;color:#111;font-weight:bold;border:0;border-radius:7px;padding:11px 15px;cursor:pointer}
+button:hover{background:#ffa044}
+.notes{display:none;margin-top:15px;padding:14px;background:#222;border-radius:8px;line-height:1.8;color:#eee}
+footer{text-align:center;padding:25px;background:#111;color:#aaa;border-top:1px solid #ff7100}
+.highlight{color:#ff8a25}
+</style>
+</head>
+<body>
+<header>
+<h1>🔥 PINTU STUDY</h1>
+<p>Your Study. Your Power. Never Give Up!</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#maths">Maths</a>
+<a href="#science">Science</a>
+<a href="#hindi">Hindi</a>
+</nav>
+
+<div class="hero" id="home">
+<h2>Welcome, Shinobi! 🍥</h2>
+<p>Knowledge is your strongest jutsu.<br>
+Padho, seekho aur apne goals achieve karo!</p>
+<a class="btn" href="#subjects">Start Learning ↓</a>
+<p class="highlight"><b>“मैं कभी हार नहीं मानूँगा!!”</b></p>
+</div>
+
+<section id="subjects">
+<h2 class="heading">⚡ Choose Your Subject</h2>
+<div class="cards">
+<div class="card" id="maths">
+<h3>📐 Mathematics</h3>
+<p>Class 10 CBSE · Maths basics, formulas aur practice.</p>
+<button onclick="showNotes('mnotes')">Open Maths Notes</button>
+<div class="notes" id="mnotes">
+<b>Chapter: Circles</b><br>
+1. Tangent circle ko sirf ek point par touch karti hai.<br>
+2. Radius, point of contact par tangent ke perpendicular hoti hai.<br>
+3. Ek external point se khinchi gayi dono tangents ki lengths equal hoti hain.<br><br>
+<b>Practice:</b> Agar PA aur PB ek external point P se tangents hain, toh PA = PB.
+</div>
+</div>
+
+<div class="card" id="science">
+<h3>🔬 Science</h3>
+<p>Class 10 CBSE · Easy explanations aur important concepts.</p>
+<button onclick="showNotes('snotes')">Open Science Notes</button>
+<div class="notes" id="snotes">
+<b>Chapter: How Do Organisms Reproduce?</b><br>
+1. Reproduction se living organisms apne jaise naye organisms banate hain.<br>
+2. Binary fission mein ek parent cell divide hokar do cells banati hai.<br>
+3. Asexual reproduction mein ek parent participate karta hai.<br><br>
+<b>Yaad rakho:</b> Amoeba binary fission se reproduce karta hai.
+</div>
+</div>
+
+<div class="card" id="hindi">
+<h3>📚 Hindi</h3>
+<p>Easy Hindi notes, revision aur question practice.</p>
+<button onclick="showNotes('hnotes')">Open Hindi Notes</button>
+<div class="notes" id="hnotes">
+<b>Hindi Study Tips</b><br>
+1. Chapter ko pehle dhyan se padho.<br>
+2. Kathin shabdon ke arth likho.<br>
+3. Har chapter ka saar apne shabdon mein likho.<br>
+4. Important questions ki regular practice karo.<br><br>
+<b>Goal:</b> Roz thoda padho aur revision zaroor karo.
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="heading">💪 Daily Motivation</h2>
+<div class="card" style="text-align:center">
+<h3>Never Give Up!</h3>
+<p>Har expert kabhi beginner tha. Aaj ka effort tumhara kal improve karega.</p>
+<button onclick="motivate()">Get Motivation</button>
+<p id="motivation" class="highlight"></p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 PINTU STUDY</p>
+<p>Made with ❤️ by Pintu</p>
+<p>DATTEBAYO! 🍥</p>
+</footer>
+
+<script>
+function showNotes(id){
+const box=document.getElementById(id);
+box.style.display=box.style.display==='block'?'none':'block';
+}
+function motivate(){
+const quotes=[
+"Main kabhi haar nahi maanunga! 🍥",
+"Roz ka ek step, goal ke ek step kareeb! 🔥",
+"Believe in yourself, Shinobi! 💪",
+"Galti karna learning ka part hai!"
+];
+document.getElementById('motivation').textContent=
+quotes[Math.floor(Math.random()*quotes.length)];
+}
+</script>
+</body>
+  </html>
+  
